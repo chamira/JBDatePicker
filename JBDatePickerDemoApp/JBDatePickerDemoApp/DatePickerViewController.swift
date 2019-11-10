@@ -34,15 +34,9 @@ class DatePickerViewController: UIViewController, JBDatePickerViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        UIApplication.shared.statusBarStyle = .lightContent
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        UIApplication.shared.statusBarStyle = .default
-    }
-    
-    
     // MARK: - JBDatePickerViewDelegate
     
     func didSelectDay(_ dayView: JBDatePickerDayView) {
